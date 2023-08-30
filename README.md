@@ -9,6 +9,7 @@ Especially helpful when there's multiple songs with the same title or multiple l
 This plugin uses 'sub-plugins' - providers. It's a .dll file placed in `\MusicBee\Plugins\MultiLyrics_LyricsProviderPlugins`.  
 List of known providers:
  - [VocaDB provider](https://github.com/PetrK39/VocaDBMultiLyricsProvider)
+   
 Make your own with this [Template](https://github.com/PetrK39/MultiLyricsTemplateProvider)
 
 Providers provides lyrics and list of fields that can help to choose necessary lyrics for song.
