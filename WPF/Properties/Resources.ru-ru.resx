@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="l10n.theme.background" xml:space="preserve">
+		<value>Фон</value>
+	</data>
+  <data name="l10n.theme.foreground" xml:space="preserve">
+		<value>Основной</value>
+	</data>
+  <data name="l10n.theme.colors.button.description" xml:space="preserve">
+		<value>Цвета кнопки</value>
+	</data>
+  <data name="l10n.theme.colors.buttonHover.description" xml:space="preserve">
+		<value>Цвета кнопки при наведении</value>
+	</data>
+  <data name="l10n.theme.colors.disabledButton.description" xml:space="preserve">
+		<value>Цвета выключенной кнопки</value>
+	</data>
+  <data name="l10n.theme.colors.progressBar.description" xml:space="preserve">
+		<value>Цвета индикатора прогресса</value>
+	</data>
+  <data name="l10n.theme.colors.textBox.description" xml:space="preserve">
+		<value>Цвета поля ввода</value>
+	</data>
+  <data name="l10n.theme.colors.description" xml:space="preserve">
+		<value>Цвета панели</value>
+	</data>
+  <data name="l10n.general" xml:space="preserve">
+		<value>Общие</value>
+	</data>
+  <data name="l10n.theme.general.enabled.description" xml:space="preserve">
+		<value>Использовать тему</value>
+	</data>
+  <data name="l10n.theme" xml:space="preserve">
+		<value>Тема</value>
+	</data>
+  <data name="l10n.theme.description" xml:space="preserve">
+		<value>Настройки позволяющие Multilyrics имитировать скин MusicBee</value>
+	</data>
+  <data name="l10n.theme.preview" xml:space="preserve">
+		<value>Предпросмотр темы</value>
+	</data>
+  <data name="l10n.theme.colors" xml:space="preserve">
+		<value>Цвета темы</value>
+	</data>
+  <data name="l10n.general.description" xml:space="preserve">
+		<value>Общие настройки MultiLyrics</value>
+	</data>
+  <data name="l10n.general.window" xml:space="preserve">
+		<value>Окно</value>
+	</data>
+  <data name="l10n.general.language" xml:space="preserve">
+		<value>Язык</value>
+	</data>
+  <data name="l10n.general.window.position.prefGroup" xml:space="preserve">
+		<value>Позиция окна</value>
+	</data>
+  <data name="l10n.general.window.size.prefGroup" xml:space="preserve">
+		<value>Режим размера</value>
+	</data>
+  <data name="l10n.general.window.position.width" xml:space="preserve">
+		<value>Слева</value>
+	</data>
+  <data name="l10n.general.window.position.height" xml:space="preserve">
+		<value>Сверху</value>
+	</data>
+  <data name="l10n.general.window.size.width" xml:space="preserve">
+		<value>Ширина</value>
+	</data>
+  <data name="l10n.general.window.size.height" xml:space="preserve">
+		<value>Высота</value>
+	</data>
+  <data name="l10n.general.window.positionMode" xml:space="preserve">
+		<value>Режим позиции</value>
+	</data>
+  <data name="l10n.general.window.sizeMode" xml:space="preserve">
+		<value>Сохранение размера</value>
+	</data>
+  <data name="SizeModeRemember" xml:space="preserve">
+		<value>Запомнить</value>
+	</data>
+  <data name="SizeModeFixed" xml:space="preserve">
+		<value>Фиксированный</value>
+	</data>
+  <data name="SizeModeMaximized" xml:space="preserve">
+		<value>Развернуть</value>
+	</data>
+  <data name="SizeModeAuto" xml:space="preserve">
+		<value>Авто</value>
+	</data>
+  <data name="PosModeAuto" xml:space="preserve">
+		<value>Авто</value>
+	</data>
+  <data name="PosModeCenter" xml:space="preserve">
+		<value>По центру</value>
+	</data>
+  <data name="PosModeFixed" xml:space="preserve">
+		<value>Фиксированный</value>
+	</data>
+  <data name="Remember" xml:space="preserve">
+		<value>Запомнить</value>
+	</data>
+  <data name="PosModeRemember" xml:space="preserve">
+    <value>Запомнить</value>
+  </data>
+  <data name="l10n.retryTitle" xml:space="preserve">
+    <value>Повторить?</value>
+  </data>
+  <data name="l10n.errorTitle" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+</root>

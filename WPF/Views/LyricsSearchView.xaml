@@ -1,0 +1,98 @@
+﻿<Window x:Class="WPF.Views.LyricsSearchView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:utils="clr-namespace:WPF.Utils"
+        xmlns:vm="clr-namespace:WPF.ViewModels"
+        xmlns:c="clr-namespace:WPF.Views.LyricsSearchViewControls"
+        mc:Ignorable="d"
+        ShowActivated="True"
+        Style="{DynamicResource ThemedControl}"
+        ResxExtension.DefaultResxName="Wpf.Views.LyricsSearchView"
+        Language="{UICulture}"
+        Title="{Resx l10n.title}"
+        Height="450"
+        Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../ControlThemes.xaml" />
+                <ResourceDictionary>
+                    <utils:InvertableBoolToVisibilityCollapsed x:Key="InvertableBoolToVisCollapsed" />
+                    <utils:InvertableBoolToVisibilityHidden x:Key="InvertableBoolToVisHidden" />
+
+                    <system:Boolean x:Key="FalseValue">False</system:Boolean>
+                    <system:Boolean x:Key="TrueValue">True</system:Boolean>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Key="Esc"
+                    Command="{Binding CancelCommand}" />
+    </Window.InputBindings>
+
+    <DockPanel LastChildFill="True">
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    DockPanel.Dock="Bottom"
+                    Margin="10">
+            <Button Command="{Binding ApplyCommand}"
+                    Content="{Resx l10n.apply}"
+                    Style="{DynamicResource ThemedButton}"
+                    Padding="10,4,10,4" />
+            <Separator Margin="10" />
+            <Button Command="{Binding CancelCommand}"
+                    Content="{Resx l10n.close}"
+                    Style="{DynamicResource ThemedButton}"
+                    Padding="10,4,10,4" />
+        </StackPanel>
+        <ScrollViewer Name="ScrollView"
+                      VerticalScrollBarVisibility="Auto"
+                      Padding="8,2,8,0"
+                      DockPanel.Dock="Top">
+            <StackPanel Orientation="Vertical">
+                <ProgressBar IsIndeterminate="True"
+                             Height="6"
+                             Margin="-4,2,-4,2"
+                             Name="IsBusyProgressBar"
+                             Visibility="{Binding IsBusy, Converter={StaticResource InvertableBoolToVisHidden}}"
+                             Style="{StaticResource ThemedProgressBar}" />
+                <Expander IsExpanded="True"
+                          DockPanel.Dock="Top">
+                    <Expander.Header>
+                        <TextBlock Text="{Resx l10n.search}"
+                                   Style="{StaticResource ThemeTextBlock}" />
+                    </Expander.Header>
+                    <c:SearchControl DataContext="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType=Window}}" />
+                </Expander>
+                <Separator Margin="8"
+                           Background="Transparent" />
+                <Expander Name="ResultsExpander"
+                          DockPanel.Dock="Top">
+                    <Expander.Header>
+                        <TextBlock Text="{Resx l10n.results}"
+                                   Style="{StaticResource ThemeTextBlock}" />
+                    </Expander.Header>
+                    <c:ResultsControl DataContext="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType=Window}}"
+                                      ScrollViewer="{Binding ElementName=ScrollView}"
+                                      ParentExpander="{Binding ElementName=ResultsExpander}" />
+                </Expander>
+                <Separator Margin="8"
+                           Background="Transparent" />
+                <Expander Name="PreviewExpander"
+                          DockPanel.Dock="Top">
+                    <Expander.Header>
+                        <TextBlock Text="{Resx l10n.preview}"
+                                   Style="{StaticResource ThemeTextBlock}" />
+                    </Expander.Header>
+                    <c:PreviewControl DataContext="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType=Window}}"
+                                      ParentExpander="{Binding ElementName=PreviewExpander}"
+                                      ScrollViewer="{Binding ElementName=ScrollView}" />
+                </Expander>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

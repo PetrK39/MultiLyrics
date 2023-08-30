@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="WPF.Views.LyricsSearchViewControls.ResultsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:utils="clr-namespace:WPF.Utils"
+             d:Background="White"
+             mc:Ignorable="d"
+             ResxExtension.DefaultResxName="Wpf.Views.LyricsSearchViewControls.ResultsControl"
+             Language="{UICulture}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../ControlThemes.xaml" />
+                <ResourceDictionary>
+                    <utils:CountToVisibilityCollapsedIfZero x:Key="CountToVisConverter" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel Margin="10"
+               LastChildFill="True">
+        <TextBlock Text="{Resx l10n.found, BindingPath=SearchResults.Count}"
+                   Style="{StaticResource ThemeTextBlock}"
+                   DockPanel.Dock="Top">
+        </TextBlock>
+        <Separator Margin="4"
+                   Background="Transparent"
+                   DockPanel.Dock="Top" />
+        <TextBlock Text="{Resx l10n.hint}"
+                   Style="{StaticResource ThemeTextBlock}"
+                   DockPanel.Dock="Bottom" />
+        <utils:NoDragDataGrid x:Name="DataGrid"
+                  ItemsSource="{Binding SearchResultsProperties, NotifyOnTargetUpdated=True}"
+                  SelectedItem="{Binding SelectedTrackProperties}"
+                  Visibility="{Binding SearchResults.Count, Converter={StaticResource CountToVisConverter}}"
+                  VerticalScrollBarVisibility="Disabled"
+                  HorizontalScrollBarVisibility="Auto"
+                  NewSelectionChanged="DataGrid_SelectionChanged"
+                  NewPreviewMouseWheel="DataGrid_PreviewMouseWheel"
+                  AutoGenerateColumns="False"
+                  TargetUpdated="DataGrid_TargetUpdated"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  CanUserAddRows="False"
+                  CanUserSortColumns="True"
+                  CanUserDeleteRows="False"
+                  CanUserReorderColumns="False"
+                  DockPanel.Dock="Bottom"
+                  Padding="0">
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Padding"
+                            Value="2" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                <Border Padding="{TemplateBinding Padding}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        Background="{TemplateBinding Background}"
+                                        SnapsToDevicePixels="True">
+                                    <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="ToolTip"
+                            Value="{Binding RelativeSource={RelativeSource Self},Path=Content.(TextBlock.Text)}" />
+                </Style>
+            </DataGrid.CellStyle>
+        </utils:NoDragDataGrid>
+    </DockPanel>
+</UserControl>

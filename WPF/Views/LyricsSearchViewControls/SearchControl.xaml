@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="WPF.Views.LyricsSearchViewControls.SearchControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:WPF.ViewModels"
+             xmlns:utils="clr-namespace:WPF.Utils"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             ResxExtension.DefaultResxName="Wpf.Views.LyricsSearchViewControls.SearchControl"
+             Language="{UICulture}"
+             mc:Ignorable="d"
+             d:Background="White"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../ControlThemes.xaml" />
+                <ResourceDictionary>
+                    <DataTemplate x:Key="LyricsProviderTemplate">
+                        <TextBlock Text="{Binding Path=Name}"
+                                   Foreground="{DynamicResource DynamicTextBoxForeground}"/>
+                    </DataTemplate>
+                    <utils:LyricsProviderTemplateSelector x:Key="LyricsProviderTemplateSelector"
+                                                          LyricsProviderTemplate="{StaticResource LyricsProviderTemplate}" />
+                    <utils:InvertableBoolToVisibilityCollapsed x:Key="InvertableBoolToVisCollapsed" />
+                    <utils:InvertableBoolToVisibilityHidden x:Key="InvertableBoolToVisHidden" />
+
+                    <system:Boolean x:Key="FalseValue">False</system:Boolean>
+                    <system:Boolean x:Key="TrueValue">True</system:Boolean>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="12,8,4,0"
+          ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="{Resx l10n.artist}"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Margin="0,3.5,50,3.5"
+                   Style="{StaticResource ThemeTextBlock}" />
+        <TextBlock Text="{Resx l10n.title}"
+                   Grid.Column="0"
+                   Grid.Row="1"
+                   Margin="0,3.5,50,3.5"
+                   Style="{StaticResource ThemeTextBlock}" />
+        <TextBlock Text="{Resx l10n.album}"
+                   Grid.Column="0"
+                   Grid.Row="2"
+                   Margin="0,3.5,50,3.5"
+                   Style="{StaticResource ThemeTextBlock}" />
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="0"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding Artist}"
+                 Style="{DynamicResource ThemedTextBox}"
+                 VerticalContentAlignment="Center"
+                 Margin="0.5" />
+        <TextBox Grid.Column="1"
+                 Grid.Row="1"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding Title}"
+                 Style="{DynamicResource ThemedTextBox}"
+                 VerticalContentAlignment="Center"
+                 Margin="0.5" />
+        <TextBox Grid.Column="1"
+                 Grid.Row="2"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding Album}"
+                 Style="{DynamicResource ThemedTextBox}"
+                 VerticalContentAlignment="Center"
+                 Margin="0.5" />
+
+        <Separator Grid.Row="3"
+                   Grid.ColumnSpan="3"
+                   Grid.Column="0"
+                   Margin="8"
+                   Background="Transparent" />
+
+        <DockPanel Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Grid.Row="4"
+                   LastChildFill="False">
+            <ComboBox ItemsSource="{Binding AvailableProviders}"
+                      ItemTemplateSelector="{StaticResource LyricsProviderTemplateSelector}"
+                      SelectedValue="{Binding CurrentProvider}"
+                      Style="{DynamicResource ThemedComboBox}"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch"
+                      VerticalContentAlignment="Stretch"
+                      MinWidth="140"
+                      DockPanel.Dock="Left" />
+
+            <Button DockPanel.Dock="Right"
+                    Command="{Binding SearchCommand}"
+                    Content="{Resx l10n.search}"
+                    ToolTip="{Binding CurrentProvider.SearchNote}"
+                    Visibility="{Binding IsBusy, Converter={StaticResource InvertableBoolToVisCollapsed}, ConverterParameter={StaticResource TrueValue}}"
+                    Style="{StaticResource ThemedButton}"
+                    Padding="10,0,10,0"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch" />
+            <Button DockPanel.Dock="Right"
+                    Command="{Binding SearchCancelCommand}"
+                    Content="{Resx l10n.searchCancel}"
+                    Visibility="{Binding IsBusy, Converter={StaticResource InvertableBoolToVisCollapsed}}"
+                    Style="{StaticResource ThemedButton}"
+                    Padding="10,0,10,0"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch" />
+        </DockPanel>
+    </Grid>
+</UserControl>
