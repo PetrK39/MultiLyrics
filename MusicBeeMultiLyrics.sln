@@ -17,9 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infralution.Localization.Wpf", "..\..\Infralution.Localization.Wpf\Infralution.Localization.Wpf.csproj", "{E3D700D5-BDFB-4777-8E9C-53E8F943AC58}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PreferenceManagerLibrary", "..\..\PreferenceManager\PreferenceManagerLibrary\PreferenceManagerLibrary.csproj", "{D4B53DBC-22B6-417F-A5A3-33E256AF730E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiLyricsProviderInterface", "MultiLyricsTemplateProvider\MultiLyricsProviderInterface\MultiLyricsProviderInterface.csproj", "{100C48D6-B8D5-46C4-A48E-73B83381CD49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiLyricsProviderInterface", "..\MultiLyricsTemplateProvider\MultiLyricsProviderInterface\MultiLyricsProviderInterface.csproj", "{100C48D6-B8D5-46C4-A48E-73B83381CD49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PreferenceManagerLibrary", "PreferenceManager\PreferenceManagerLibrary\PreferenceManagerLibrary.csproj", "{E9A21909-5FAC-43E8-8DB5-14E1089F4798}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,21 +39,21 @@ Global
 		{E3D700D5-BDFB-4777-8E9C-53E8F943AC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3D700D5-BDFB-4777-8E9C-53E8F943AC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3D700D5-BDFB-4777-8E9C-53E8F943AC58}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4B53DBC-22B6-417F-A5A3-33E256AF730E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4B53DBC-22B6-417F-A5A3-33E256AF730E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4B53DBC-22B6-417F-A5A3-33E256AF730E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4B53DBC-22B6-417F-A5A3-33E256AF730E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{100C48D6-B8D5-46C4-A48E-73B83381CD49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{100C48D6-B8D5-46C4-A48E-73B83381CD49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{100C48D6-B8D5-46C4-A48E-73B83381CD49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{100C48D6-B8D5-46C4-A48E-73B83381CD49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A21909-5FAC-43E8-8DB5-14E1089F4798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A21909-5FAC-43E8-8DB5-14E1089F4798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A21909-5FAC-43E8-8DB5-14E1089F4798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A21909-5FAC-43E8-8DB5-14E1089F4798}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_TaskErrorCategory = Message
-		RESX_ShowErrorsInErrorList = False
 		SolutionGuid = {276C716A-EDDD-4D46-AAA4-177992731121}
+		RESX_ShowErrorsInErrorList = False
+		RESX_TaskErrorCategory = Message
 	EndGlobalSection
 EndGlobal

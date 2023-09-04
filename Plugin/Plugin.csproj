@@ -191,13 +191,13 @@
       <Project>{e3d700d5-bdfb-4777-8e9c-53e8f943ac58}</Project>
       <Name>Infralution.Localization.Wpf</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\PreferenceManager\PreferenceManagerLibrary\PreferenceManagerLibrary.csproj">
-      <Project>{d4b53dbc-22b6-417f-a5a3-33e256af730e}</Project>
-      <Name>PreferenceManagerLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MultiLyricsTemplateProvider\MultiLyricsProviderInterface\MultiLyricsProviderInterface.csproj">
+    <ProjectReference Include="..\MultiLyricsTemplateProvider\MultiLyricsProviderInterface\MultiLyricsProviderInterface.csproj">
       <Project>{100c48d6-b8d5-46c4-a48e-73b83381cd49}</Project>
       <Name>MultiLyricsProviderInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PreferenceManager\PreferenceManagerLibrary\PreferenceManagerLibrary.csproj">
+      <Project>{e9a21909-5fac-43e8-8db5-14e1089f4798}</Project>
+      <Name>PreferenceManagerLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\WPF\WPF.csproj">
       <Project>{7928210B-CE67-4B02-A508-E1F3B125C4A9}</Project>

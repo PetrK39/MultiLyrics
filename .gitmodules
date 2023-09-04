@@ -1,0 +1,6 @@
+[submodule "PreferenceManager"]
+	path = PreferenceManager
+	url = https://github.com/PetrK39/PreferenceManager.git
+[submodule "MultiLyricsTemplateProvider"]
+	path = MultiLyricsTemplateProvider
+	url = https://github.com/PetrK39/MultiLyricsTemplateProvider.git
