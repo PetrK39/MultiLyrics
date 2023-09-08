@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
+using MultiLyricsProviderInterface;
 
 namespace WPF.Utils
 {
@@ -16,7 +17,7 @@ namespace WPF.Utils
                 var pluginName = str.Substring(1, str.IndexOf('%', 1) - 1);
                 var resKey = str.Substring(pluginName.Length + 2 + 1);
 
-                var plugin = App.PluginManager.LyricsProviders.Single(p => p.Name == pluginName);
+                var plugin = App.PluginManager.LyricsProviders.Single(p => p.Name == pluginName) as ILocalisationProvider;
                 return plugin.GetResource(resKey, culture) ?? "#" + str;
             }
             else
